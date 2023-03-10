@@ -2,9 +2,9 @@ package edu.sfsu.classes;
 
 public class Cars {
     private String make;
-    private String Model;
+    private String model;
     private int year;
-    private int miles;
+    private int odometer;
     public Cars() {
         System.out.println("Please enter the following details for your car...");
     }
@@ -18,11 +18,11 @@ public class Cars {
     }
 
     public String getModel() {
-        return Model;
+        return model;
     }
 
     public void setModel(String model) {
-        Model = model;
+        model = model;
     }
 
     public int getYear() {
@@ -33,11 +33,15 @@ public class Cars {
         this.year = year;
     }
 
-    public int getMiles() {
-        return miles;
+    public int getOdometer() {
+        return odometer;
     }
 
-    public void setMiles(int miles) {
-        this.miles = miles;
+    public void setOdometer(int miles) {
+        this.odometer= miles;
+    }
+
+    public void display() {
+       System.out.println(this.getMake());
     }
 }
