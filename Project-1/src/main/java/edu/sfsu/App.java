@@ -2,16 +2,17 @@ package edu.sfsu;
 
 import edu.sfsu.classes.Cars;
 import edu.sfsu.classes.Coins;
-import edu.sfsu.interfaces.Car;
-import edu.sfsu.interfaces.Coin;
 
 import java.util.Scanner;
 
 public class App {
     public static void main( String[] args ) {
-        int option = 0;
-
+        Cars cars = null;
+        Scanner choice;
         Scanner input = new Scanner(System.in);
+        String item;
+        int option;
+        int selection;
 
         do {
             System.out.println("Select an Option");
@@ -25,12 +26,12 @@ public class App {
 
             switch (option) {
                 case 1:
-                    Scanner choice = new Scanner(System.in);
+                    choice = new Scanner(System.in);
                     System.out.println("What kind of item would you like to add? (car, coin, collectable or book)");
-                    String item = choice.nextLine();
+                    item = choice.nextLine();
                     switch(item) {
                         case "car":
-                            Cars cars = new Cars();
+                            cars = new Cars();
 
                             System.out.print("Make: ");
                             item = choice.nextLine();
@@ -40,9 +41,15 @@ public class App {
                             item = choice.nextLine();
                             cars.setModel(item);
 
-                            System.out.println("Make " + cars.getMake());
-                            System.out.println("Model " + cars.getModel());
+                            System.out.print("Year: ");
+                            selection = choice.nextInt();
+                            cars.setYear(selection);
 
+                            System.out.print("Odometer: ");
+                            selection = choice.nextInt();
+                            cars.setOdometer(selection);
+
+                            cars.display();
                             break;
                         case "coin":
                             new Coins();
@@ -51,7 +58,10 @@ public class App {
                     System.out.println("Your choice: " + item);
                     break;
                 case 2:
-                    System.out.println("case 2");
+                    System.out.println("Make " + cars.getMake());
+                    System.out.println("Model " + cars.getModel());
+                    System.out.println("Year " + cars.getYear());
+                    System.out.println("Miles " + cars.getOdometer());
                     break;
                 case 3:
                     System.out.println("case 3");
@@ -71,6 +81,8 @@ public class App {
 }
 /*
  *  Car, Coin, Collectable or Rare Book
- *
- *
+ *  Notes:
+ *  Program Enhancements
+ *  1. If there are no items added to auction, then options 2 - 4 should not be an option, only until items have been added should the user see
+ *     options 2 - 3.
  * */
