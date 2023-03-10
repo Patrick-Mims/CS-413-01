@@ -9,8 +9,8 @@ import java.util.Scanner;
 
 public class App {
     public static void main( String[] args ) {
-        Books books = null;
-        Cars cars   = null;
+        Books books;
+        Cars cars;
         Coins coins = null;
         Collectables collectables = null;
 
