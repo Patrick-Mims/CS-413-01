@@ -6,7 +6,7 @@ public class Cars {
     private int year;
     private int odometer;
     public Cars() {
-        System.out.println("Please enter the following details for your car...");
+        System.out.println("Please enter the following details for your car ");
     }
 
     public String getMake() {
