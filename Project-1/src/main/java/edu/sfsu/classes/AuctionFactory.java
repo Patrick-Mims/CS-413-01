@@ -2,6 +2,9 @@ package edu.sfsu.classes;
 
 /* Factories handle the details of object creation. */
 public class AuctionFactory {
+    public AuctionFactory() {
+
+    }
     /* createAuctionItem is the method all clients will use to instantiate new objects */
     public Item createAuctionItem(String type) {
         Item item = null;
@@ -14,7 +17,15 @@ public class AuctionFactory {
                 item = new Cars();
                 break;
             case "coins":
-                item = new Coins();
+                item = new Item() {
+                    @Override
+                    Item createAuctionItem(String item) {
+                        if(item.equals("nickels")) {
+                            return new Nickels();
+                        }
+                        return null;
+                    }
+                };
                 break;
             case "collectables":
                 item = new Collectables();

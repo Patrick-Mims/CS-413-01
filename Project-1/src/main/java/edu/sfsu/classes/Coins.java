@@ -1,7 +1,13 @@
 package edu.sfsu.classes;
 
-public class Coins {
+public class Coins extends AuctionHouse {
+
     public Coins() {
-        System.out.println("Coins");
+        super(factory);
+    }
+
+    @Override
+    Item createAuctionItem(String type) {
+        return null;
     }
 }

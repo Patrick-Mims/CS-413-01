@@ -1,16 +1,18 @@
 package edu.sfsu;
 
-import edu.sfsu.classes.Books;
-import edu.sfsu.classes.Cars;
-import edu.sfsu.classes.Coins;
-import edu.sfsu.classes.Collectables;
+import edu.sfsu.classes.*;
 
 import java.util.Scanner;
 
 public class App {
+    Item orderItem(String type) {
+
+        return null;
+    }
     public static void main( String[] args ) {
+
         Books books;
-        Cars cars;
+        Cars cars = null;
         Coins coins = null;
         Collectables collectables = null;
 
@@ -57,7 +59,7 @@ public class App {
 
                             System.out.print("Odometer: ");
                             selection = choice.nextInt();
-                            cars.setOdometer(selection);
+                            cars.setMiles(selection);
                             break;
                         case "book":
                             books = new Books();
@@ -85,7 +87,7 @@ public class App {
                     System.out.println("Make "  + cars.getMake());
                     System.out.println("Model " + cars.getModel());
                     System.out.println("Year "  + cars.getYear());
-                    System.out.println("Miles " + cars.getOdometer());
+                    System.out.println("Miles " + cars.getMiles());
                     System.out.println("\n");
                     break;
                 case 3:

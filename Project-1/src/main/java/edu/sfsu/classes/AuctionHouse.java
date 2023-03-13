@@ -1,6 +1,6 @@
 package edu.sfsu.classes;
 
-public class AuctionHouse {
+public abstract class AuctionHouse {
     // Define a reference to AuctionFactory
     AuctionFactory factory;
 
@@ -11,8 +11,9 @@ public class AuctionHouse {
     public Item orderItem(String type) {
         Item item;
 
-        item = factory.createAuctionItem(type);
+        item = createAuctionItem(type);
 
         return item;
     }
+    abstract Item createAuctionItem(String type);
 }

@@ -1,12 +1,11 @@
 package edu.sfsu.classes;
 
-public class Cars {
+public class Cars extends Item {
     private String make;
     private String model;
     private int year;
-    private int odometer;
+    private int miles;
     public Cars() {
-        System.out.println("Please enter the following details for your car ");
     }
 
     public String getMake() {
@@ -33,15 +32,20 @@ public class Cars {
         this.year = year;
     }
 
-    public int getOdometer() {
-        return odometer;
+    public int getMiles() {
+        return miles;
     }
 
-    public void setOdometer(int miles) {
-        this.odometer= miles;
+    public void setMiles(int miles) {
+        this.miles = miles;
     }
 
     public void display() {
        System.out.println(this.getMake());
+    }
+
+    @Override
+    Item createAuctionItem() {
+        return null;
     }
 }

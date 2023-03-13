@@ -2,7 +2,7 @@ package edu.sfsu.classes;
 
 import edu.sfsu.interfaces.Book;
 
-public class Books {
+public class Books extends Item {
     private String author;
     private String condition;
     private String title;
@@ -40,5 +40,10 @@ public class Books {
 
     public void setPublished(int published) {
         this.published = published;
+    }
+
+    @Override
+    Item createAuctionItem() {
+        return null;
     }
 }

@@ -1,17 +1,16 @@
 package edu.sfsu.classes;
 
 public abstract class Item {
-    private final String itemName;
-    public Item(String itemName) {
-        this.itemName = itemName;
-    }
+    private final String itemName = null;
 
     public String getItemName() {
-        return itemName;
+        return null;
     }
 
     @Override
     public String toString() {
         return String.format(getItemName());
     }
+
+    abstract Item createAuctionItem();
 }
